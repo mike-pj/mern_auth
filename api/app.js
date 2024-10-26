@@ -26,3 +26,13 @@ app.listen(port, () => {
 
 app.use("/api/auth", authRoutes);
 app.use("/api/user", userRoutes);
+
+app.use((err, req, res, next) => {
+    const statusCode = err.statusCode || 500;
+    const message = err.message || "Internal message Error";
+    return res.status(statusCode).json({
+        success: false,
+        statusCode,
+        message,
+    });
+});
