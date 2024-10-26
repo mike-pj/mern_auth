@@ -9,7 +9,7 @@ export const signupValidation = (data) => {
     return Schema.validate(data);
 }
 
-export const loginValidation = (data) => {
+export const signinValidation = (data) => {
     const Schema = Joi.object({
         email: Joi.string().required().email(),
         password: Joi.string().required().min(6)
