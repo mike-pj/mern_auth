@@ -1,9 +1,8 @@
 import express from "express"
+import { signup } from "../contollers/authController.js";
 
 const router = express.Router()
 
-router.get("/", (req, res) => {
-    res.json({message: "API working"});
-})
+router.post("/signup", signup)
 
 export default router;

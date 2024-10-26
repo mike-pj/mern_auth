@@ -15,6 +15,8 @@ mongoose.connect(process.env.MONGO_URL)
 
 const app = express();
 
+app.use(express.json())
+
 
 const port = process.env.PORT;
 
